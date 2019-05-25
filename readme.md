@@ -12,20 +12,20 @@
 ### 目录
 
 1. 先决知识预热
-  - step0.js
+    - step0.js
 2. 常见场景回顾
-  - step1.js
+    - step1.js
 3. 初识策略模式
-  - step2.js  
+    - step2.js  
 4. 表单验证演示
-  - step3.js
+    - step3.js
 5. 策略模式改进
-  - step4.js
-  - step5.js
+    - step4.js
+    - step5.js
 6. 探索vue props校验原理
     - step6.js
-  - step7.js
-  - step8.js
-  - step9.js
+    - step7.js
+    - step8.js
+    - step9.js
 
 ---
