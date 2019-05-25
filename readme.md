@@ -22,8 +22,8 @@
 5. 策略模式改进
   - step4.js
   - step5.js
-6. 探索props原理
-  - step6.js
+6. 探索vue props校验原理
+    - step6.js
   - step7.js
   - step8.js
   - step9.js
