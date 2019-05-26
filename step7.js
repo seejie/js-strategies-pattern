@@ -8,6 +8,7 @@ const props = {
 }
 
 // 为了更友好的提示，更精准的定位，我把属性名加上
+// 策略名称对应起来，c策略可以更细化
 const strategies = {
   String: function(value, name){
     if(typeof value !== 'string') {

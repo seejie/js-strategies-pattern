@@ -95,6 +95,6 @@ const data = {
   // c: 'str'
 }
 
-// 恩，这个也许是内部自动调用的代码吧，不知道被哪个钩子函数勾着
+// 恩，这个可能是 initState(vm) 在created hook调用之前
 const err = new Vaildator().validate(data);
 err && console.log(err)

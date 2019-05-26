@@ -48,7 +48,8 @@ Validate.prototype.run = function () {
   // }
 
   // 根据某本算法书说，这样写时间空间复杂度最低
-  // 这样写连长度都不用计算，但是 eslint 规则 for循环 里不允许赋值和运算同时进行
+  // 这样写连长度都不用计算，也不用做长度比较
+  // 但是 eslint 规则 for循环 里不允许赋值和运算同时进行
   // 不适用全部场景，数组元素强转布尔值不能为false
   for (let i = 0, rule; rule = this.cache[i++];) {
     let msg = rule()
@@ -68,7 +69,7 @@ const from = {
 }
 
 // before submit hook/event
-// 创建实例对象省去吧，pipe链式调用吧
+// 创建实例对象省去，pipe链式调用
 const errMsg = new Validate()
   .add(from.username, 'isNotEmpty', '用户名不能为空')
   .add(from.password, 'minLength:6', '密码长度不能小于')

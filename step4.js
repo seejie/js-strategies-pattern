@@ -36,7 +36,6 @@ Validate.prototype.add = function(data, rule, errMsg) {
     arr.push(errMsg)
     return strategies[rule].apply(null, arr)
   })
-  return this
 }
 
 // 逐一执行缓存的策略
@@ -61,8 +60,8 @@ const from = {
 // before submit hook/event
 const validatePipe = new Validate()
 validatePipe.add(from.username, 'isNotEmpty', '用户名不能为空')
-.add(from.password, 'minLength:6', '密码长度不能小于')
-.add(from.tel, 'isMobile', '手机格式不符合')
+validatePipe.add(from.password, 'minLength:6', '密码长度不能小于')
+validatePipe.add(from.tel, 'isMobile', '手机格式不符合')
 const errMsg = validatePipe.run()
 if (errMsg) {
   console.log(errMsg)
@@ -73,8 +72,9 @@ if (errMsg) {
 // 1. vendor.js直引用一个策略对象，webpack打包js体积减少
 // 2. 易于扩展，不区分框架，jquery，vue，react，node都可以使用
 // 3. 全局把控，查找方便，项目里的所有策略都可以看到。不会出现：哎，我之前有一个地方用到这个判断了，在哪来着，我找找
+// 4. 业务函数体更易读，清晰可见所有的策略
 
 // 思考：
 // 1. 代码洁癖患者：一行代码显得牛逼些，暂且损失一些易读性吧
-// 2. vaildatePipe虽然叫pipe，不能链式调用，显得有点cuo
+// 2. vaildatePipe虽然叫pipe，不能链式调用，显得有点low
 // 3. 代码洁癖患者：也许还能有优化的空间吧

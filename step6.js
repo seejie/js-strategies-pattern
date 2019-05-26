@@ -33,14 +33,14 @@ function Vaildator (){
   this.cache = []
 }
 
-// vue里没有链式调用，链式调用也可以更自动化一下就更好
+// vue里没有链式调用，链式调用如果可以更自动化一下就更好
 // 因此我模拟一下，for循环 把所有属性全部添加到策略缓存
 // 因为不使用链式调用，而且我把所有属性都自动添加好了
 // 最后改为自动运行，改个名字，岂不更逼真
 Vaildator.prototype.validate = function (data) {
   for (let attr in data) {
     this.cache.push(() => {
-      return strategies[attr].apply(null, [data[attr], attr])
+      return strategies[attr].call(null, data[attr])
     })
   }
   
