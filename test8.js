@@ -96,5 +96,6 @@ const data = {
 }
 
 // 恩，这个可能是 initState(vm) 在created hook调用之前
+// https://ustbhuangyi.github.io/vue-analysis/data-driven/new-vue.html
 const err = new Vaildator().validate(data);
 err && console.log(err)
