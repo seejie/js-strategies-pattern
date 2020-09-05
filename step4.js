@@ -52,8 +52,8 @@ const from = {
   // username: 'admin',
   password: 'admin',
   // password: 'abcdef',
-  // tel: '18888888888',
   tel: '1234567890'
+  // tel: '18888888888',
 }
 
 // before submit hook/event

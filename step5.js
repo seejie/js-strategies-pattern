@@ -53,13 +53,12 @@ Validate.prototype.run = function () {
 
 // vm.$data
 const from = {
-  // username: '',
-  username: 'admin',
+  username: '',
+  // username: 'admin',
   password: 'admin',
   // password: 'abcdef',
-  // password: '12345678',
-  // tel: '18888888888',
   tel: '1234567890'
+  // tel: '18888888888',
 }
 
 // before submit hook/event
