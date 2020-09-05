@@ -12,19 +12,19 @@ const props = {
 const strategies = {
   a: function(value){
     if(typeof value !== 'string') {
-      return console.error('value must be string')
+      return console.error('value a must be string')
     }
   },
   b: function(value){
     if (!/number/.test(typeof value)){
-      return console.error('value must be number')
+      return console.error('value b must be number')
     }
   },
   c: function(value) {
     if (value === undefined) {
-      return console.error('this value is require')
+      return console.error('this c value is require')
     } else if (value.constructor !== Number) {
-      return console.error('value must be number')
+      return console.error('value c must be number')
     }
   }
 }
