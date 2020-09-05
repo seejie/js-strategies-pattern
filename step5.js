@@ -39,14 +39,6 @@ Validate.prototype.add = function(data, rule, errMsg) {
 
 // 逐一执行缓存的策略
 Validate.prototype.run = function () {
-
-  // 根据犀牛书说，for循环 是 while循环 的语法糖
-  // 因此根据 for循环 的执行机制，可以缓存长度，减少计算次数
-  // for (let i = 0, len = this.cache.length; i <len; i++) {
-  //   let msg = this.cache[i]()
-  //   if (msg) return msg
-  // }
-
   // 根据某本算法书说，这样写时间空间复杂度最低
   // 这样写连长度都不用计算，也不用做长度比较
   // 但是 eslint 规则 for循环 里不允许赋值和运算同时进行
