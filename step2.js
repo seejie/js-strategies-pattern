@@ -4,27 +4,15 @@
 // 策略对象
 const strategies = {
   // 策略S
-  S: (name, salary) => {
-    salary *= 10
-    console.log(`${name}：年终奖 ${salary}`)
-    return salary
-  },
+  S: salary => salary *= 10,
   // 策略B
-  B: (name, salary) => {
-    salary *= 3
-    console.log(`${name}：年终奖 ${salary}`)
-    return salary
-  },
+  B: salary => salary *= 3,
   // 策略D
-  D: (name, salary) => {
-    salary *= 0
-    console.log(`${name}：年终奖 ${salary}`)
-    return salary
-  },
+  D: _ => 0,
 }
 
 function $ ({name, salary, kpi}) {
-  return strategies[kpi](name, salary)
+  return _ => console.log(`${name}：年终奖 ${strategies[kpi](salary)}`)
 }
 
 const 小员工 = {
@@ -45,9 +33,9 @@ const 背锅侠 = {
   kpi: 'D',
 }
 
-$(小员工) // 50000
-$(老板) // 90000
-$(背锅侠) // 0
+$(小员工)() // 50000
+$(老板)() // 90000
+$(背锅侠)() // 0
 
 // 优点：
 // 1. 业务函数体$()代码量减少，条件分支被拆为不同的策略，互不影响
