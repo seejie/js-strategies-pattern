@@ -50,9 +50,8 @@ Validate.prototype.run = function () {
 const from = {
   username: '',
   // username: 'admin',
-  // password: 'admin',
+  password: 'admin',
   // password: 'abcdef',
-  password: '12345678',
   // tel: '18888888888',
   tel: '1234567890'
 }
