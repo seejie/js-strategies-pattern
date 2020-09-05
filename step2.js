@@ -4,19 +4,19 @@
 // 策略对象
 const strategies = {
   // 策略S
-  'S': (name, salary) => {
+  S: (name, salary) => {
     salary *= 10
     console.log(`${name}：年终奖 ${salary}`)
     return salary
   },
   // 策略B
-  'B': (name, salary) => {
+  B: (name, salary) => {
     salary *= 3
     console.log(`${name}：年终奖 ${salary}`)
     return salary
   },
   // 策略D
-  'D': (name, salary) => {
+  D: (name, salary) => {
     salary *= 0
     console.log(`${name}：年终奖 ${salary}`)
     return salary
