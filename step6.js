@@ -39,9 +39,7 @@ function Vaildator (){
 // 最后改为自动运行，改个名字，岂不更逼真
 Vaildator.prototype.validate = function (data) {
   for (let attr in data) {
-    this.cache.push(() => {
-      return strategies[attr].call(null, data[attr])
-    })
+    this.cache.push(() => strategies[attr].call(null, data[attr]))
   }
   
   return this.run()
@@ -58,7 +56,7 @@ const data = {
   // b: 'str',
   // b: 123,
   // c: 123
-  c: '123'
+  // c: '123'
 }
 
 const err = new Vaildator().validate(data);
