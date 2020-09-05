@@ -11,11 +11,13 @@ const props = {
 // 还不知道如何上手，但是从字面意思，我先直接翻译一个策略对象
 const strategies = {
   a: function(value){
+    if (value === undefined) return
     if(typeof value !== 'string') {
       return console.error('value a must be string')
     }
   },
   b: function(value){
+    if (value === undefined) return
     if (!/number/.test(typeof value)){
       return console.error('value b must be number')
     }
@@ -38,7 +40,7 @@ function Vaildator (){
 // 因为不使用链式调用，而且我把所有属性都自动添加好了
 // 最后改为自动运行，改个名字，岂不更逼真
 Vaildator.prototype.validate = function (data) {
-  for (let attr in data) {
+  for (let attr in props) {
     this.cache.push(() => strategies[attr].call(null, data[attr]))
   }
   
@@ -52,8 +54,9 @@ Vaildator.prototype.run = function () {
 }
 
 const data = {
-  a: '111',
-  // b: 'str',
+  a: 111,
+  // a: '111',
+  b: 'str',
   // b: 123,
   // c: 123
   // c: '123'
