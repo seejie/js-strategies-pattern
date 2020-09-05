@@ -43,6 +43,8 @@ Validate.prototype.run = function () {
   // 这样写连长度都不用计算，也不用做长度比较
   // 但是 eslint 规则 for循环 里不允许赋值和运算同时进行
   // 不适用全部场景，数组元素强转布尔值不能为false
+  // for (let i = 0; rule < this.cache.length; i++) {
+  // for (let i = 0, len = this.cache.length; i < len; i++) {
   for (let i = 0, rule; rule = this.cache[i++];) {
     let msg = rule()
     if (msg) return msg
