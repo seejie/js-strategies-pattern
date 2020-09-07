@@ -86,12 +86,12 @@ Vaildator.prototype.run = function () {
 }
 
 const data = {
-  a: 123,
-  // a: 'str',
+  // a: 123,
+  a: 'str',
   // b: 'str',
-  // b: 123,
-  b: true,
-  // c: 123
+  b: 123,
+  // b: true,
+  c: 123
   // c: 'str'
 }
 

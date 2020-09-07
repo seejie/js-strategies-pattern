@@ -51,11 +51,11 @@ Vaildator.prototype.run = function () {
 }
 
 const data = {
-  a: 111,
-  // a: '111',
-  b: 'str',
-  // b: 123,
-  // c: 123
+  // a: 111,
+  a: '111',
+  // b: 'str',
+  b: 123,
+  c: 123
   // c: '123'
 }
 
